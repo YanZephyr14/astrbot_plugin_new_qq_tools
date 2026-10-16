@@ -1063,6 +1063,14 @@ class QQToolsPlugin(Star):
         这样 LTM 记录的群聊历史中也会包含 [MSG_ID:xxx] 和文件信息。
         """
         try:
+            # 0. 过滤协议底层无载荷的空消息事件（如 QQNT 文件下载回执、空状态同步等）
+            raw_text = (event.message_str or "").strip()
+            components = getattr(event.message_obj, "message", []) or []
+            if not raw_text and not components:
+                logger.debug("[QQTools] 检测到无载荷空事件 (message_str为空且组件列表为空)，阻断后续流转")
+                event.stop_event()
+                return
+
             # 引用消息增强：
             # AstrBot 的 OneBot(V11) 适配器默认只把「文本段」拼进 message_str，
             # 因此被引用消息如果只有图片/文件/卡片等非文本内容，Reply.message_str 会是空，
@@ -1164,7 +1172,9 @@ class QQToolsPlugin(Star):
             id_suffix = f" [MSG_ID:{message_id}]" if show_msg_id else ""
             
             # 只有在 show_message_id 启用且 delay_append_msg_id 未启用且非指令消息时，才注入到 event
-            if show_msg_id and not effective_delay:
+            # 确保消息本身存在有效内容（文本或组件），避免纯空消息被注入 MSG_ID 变成非空伪消息
+            has_content = bool((event.message_str or "").strip()) or bool(getattr(event.message_obj, "message", []))
+            if show_msg_id and not effective_delay and has_content:
                 # 防止重复添加
                 if id_suffix not in event.message_str:
                     event.message_str += id_suffix
