@@ -9,7 +9,7 @@ plugins_dir = Path(__file__).resolve().parent.parent.parent
 if str(plugins_dir) not in sys.path:
     sys.path.insert(0, str(plugins_dir))
 
-from astrbot_plugin_qq_tools.main import QQToolsPlugin  # noqa: E402
+from astrbot_plugin_new_qq_tools.main import QQToolsPlugin  # noqa: E402
 
 import astrbot.api.message_components as Comp  # noqa: E402
 

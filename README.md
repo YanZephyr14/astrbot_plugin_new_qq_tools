@@ -1,7 +1,14 @@
-# astrbot_plugin_qq_tools
+<div align="center">
+  <img src="logo.png" width="120" style="border-radius: 20%;" alt="astrbot_plugin_new_qq_tools logo" />
+  <h1>astrbot_plugin_new_qq_tools</h1>
+  <p><b>QQ工具集 —— 为 AstrBot 深度打造的 QQ 平台特定功能扩展</b></p>
+</div>
 
-> 为 **AstrBot** 提供 QQ 平台（OneBot / aiocqhttp）特定的工具集：**引用回复适配器**、撤回消息、检索最近消息、群管理、头像查看、网页浏览（Playwright）、视频分析（Gemini）、以及「定时唤醒」等能力。
-> 让机器人在 QQ 场景下的"动手能力"更强、更像一个真正能帮你操作的助理，增强自主性。
+> 📢 **开源维护与致敬原作者声明**：  
+> 本项目基于原作者 [YUMU1658](https://github.com/YUMU1658) 的开源项目 [astrbot_plugin_qq_tools](https://github.com/YUMU1658/astrbot_plugin_qq_tools) 接续维护与演进开发。  
+> 鉴于原仓库目前已处于归档（Archived）状态，为了保障广大 AstrBot 用户在 QQ 场景下的稳定运行与日常体验，本项目以 `astrbot_plugin_new_qq_tools` 名义接续维护，重点修复了 QQNT 协议底层无载荷空事件导致的误唤醒与大模型幻觉自言自语等问题，并持续迭代。衷心感谢原作者 [@YUMU1658](https://github.com/YUMU1658) 优秀的架构设计与无私开源贡献！
+
+> 为 **AstrBot** 提供 QQ 平台（OneBot / aiocqhttp）特定的工具集：**引用回复适配器**、撤回消息、检索最近消息、群管理、头像查看、网页浏览（Playwright）、视频分析（Gemini）、以及「定时唤醒」等能力。让机器人在 QQ 场景下的“动手能力”更强、更像一个真正能帮你操作的贴心助理。
 
 ---
 
@@ -308,11 +315,39 @@
 
 ---
 
-## 🤝 贡献与反馈
+## 📦 安装与使用
 
-欢迎提 Issue / PR 
-建议反馈时附带：
-- AstrBot 版本、适配器类型（NapCat / 其他）
-- 复现步骤、日志、消息样例（尽量脱敏）
+### 方式 1：插件市场一键安装（推荐）
+在 AstrBot 管理后台 WebUI「插件市场」中搜索并安装：
+```text
+QQ工具集
+# 或搜索包名：astrbot_plugin_new_qq_tools
+```
+
+### 方式 2：CLI 命令行安装
+```bash
+astrbot plug install astrbot_plugin_new_qq_tools
+```
+
+### 方式 3：Git 手动克隆
+进入 AstrBot 的 `data/plugins/` 目录：
+```bash
+git clone https://github.com/YanZephyr14/astrbot_plugin_new_qq_tools.git
+```
 
 ---
+
+## 🤝 贡献与反馈
+
+欢迎在 GitHub 提交 Issue 或 Pull Request。
+反馈建议时附带：
+- AstrBot 版本、适配器类型（NapCat / 其他）
+- 复现步骤、脱敏日志与消息样例
+
+---
+
+## 🙏 致谢与来源
+
+- **原项目仓库**：[YUMU1658/astrbot_plugin_qq_tools](https://github.com/YUMU1658/astrbot_plugin_qq_tools)（原作者：[@YUMU1658](https://github.com/YUMU1658)）
+- **当前维护者**：[@YanZephyr14](https://github.com/YanZephyr14)
+- **开源协议**：本项目继承原仓库开源协议（MIT License）。再次感谢原作者对 AstrBot 生态做出的贡献！
