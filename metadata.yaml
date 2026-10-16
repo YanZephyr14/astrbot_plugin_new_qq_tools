@@ -1,6 +1,21 @@
 name: astrbot_plugin_new_qq_tools
 display_name: QQ工具集
-version: v0.2.2
-author: YanZephyr (原作者: YUMU1658)
-desc: "为 AstrBot 提供 QQ 平台（OneBot / aiocqhttp）特定的工具集：引用回复、撤回消息、检索最近消息、群管理、头像查看、网页浏览（Playwright）、视频分析（Gemini）、以及「定时唤醒」等能力。\n本项目基于原作者 YUMU1658/astrbot_plugin_qq_tools 接续维护开发，修复了协议端无载荷空事件导致的误触发与幻觉等问题。"
+short_desc: 为 AstrBot 带来丰富的 QQ 特性支持与实用工具集（OneBot / aiocqhttp）
+desc: |
+  为 AstrBot 提供 QQ 平台（OneBot / aiocqhttp）特定的工具集：
+  - 核心能力：引用回复适配、消息精准撤回、上下文回顾与检索、群成员管理、高清头像获取；
+  - 进阶拓展：网页浏览（Playwright 视觉驱动交互）、视频智能分析（Gemini 深度总结）、以及定时任务唤醒；
+  - 稳定性强化：修复了协议端无载荷空事件导致的误触发与模型幻觉问题，保障多插件共存时的纯净度与鲁棒性。
+  注：本项目基于原作者 YUMU1658/astrbot_plugin_qq_tools 接续维护开发，遵守 MIT 开源协议。
+version: 0.2.2
+author: YanZephyr14
 repo: https://github.com/YanZephyr14/astrbot_plugin_new_qq_tools
+astrbot_version: ">=4.5.0"
+support_platforms:
+  - aiocqhttp
+category: "其他"
+tags:
+  - qq
+  - onebot
+  - 工具
+  - 工具集
